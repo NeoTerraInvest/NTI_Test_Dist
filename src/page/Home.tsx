@@ -35,28 +35,59 @@ const Home = () => {
       <div id={styled.contents}>
         <div id={styled.about}>
           <span id={styled.aboutTitle}>About Us</span>
-          <div>{isLanguage === 'kor' ? kor.about : eng.about}</div>
+          <hr />
+          <div id={styled.aboutDetail}>
+            <div id={styled.aboutus}>
+              <span>{isLanguage === 'kor' ? kor.about : eng.about}</span>
+              <hr />
+              <div id={styled.details}>
+                <div>
+                  <span>Neo Terra, the Beginning of a New World</span>
+                </div>
+                <div>
+                  <span>New Investments, Sustainable Growth</span>
+                </div>
+                <div>
+                  <span>Leading the Way in Innovation and Challenge</span>
+                </div>
+                <div>
+                  <span>NTI, Creating New Value</span>
+                </div>
+              </div>
+              <hr />
+            </div>
+          </div>
         </div>
         <div id={styled.invest}>
           <div className={styled.investTitle}>
             <span>Investment</span>
             <span>in the Future</span>
           </div>
+          <hr />
+
           <div id={styled.investContents}>
             <div className={styled.aiContents}>
-              <div id={styled.aiImage}></div>
+              <div id={styled.aiImage}>
+                <span>Artificial Intelligence</span>
+              </div>
               <span>Ai</span>
             </div>
             <div className={styled.quantumContents}>
-              <div id={styled.quantumImage}></div>
+              <div id={styled.quantumImage}>
+                <span>Quantum Computing</span>
+              </div>
               <span>Quantum</span>
             </div>
             <div className={styled.DeFIContents}>
-              <div id={styled.DeFImage}></div>
+              <div id={styled.DeFImage}>
+                <span>Decentralized Finance</span>
+              </div>
               <span>RWA</span>
             </div>
             <div className={styled.web3Contents}>
-              <div id={styled.web3Image}></div>
+              <div id={styled.web3Image}>
+                <span>Web 3.0</span>
+              </div>
               <span>Web3</span>
             </div>
           </div>
@@ -71,8 +102,8 @@ const Home = () => {
           <span>© 2012 Neo Terra Invest</span>
           <div id={styled.footerGroup}>
             <span>Contact</span>
-            <span>About</span>
-            <span>investment</span>
+            <span>About Us</span>
+            <span>investment in the Future</span>
           </div>
         </div>
         <div>test</div>
