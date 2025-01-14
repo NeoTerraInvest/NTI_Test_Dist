@@ -1,0 +1,251 @@
+/* 메인 스타일 */
+.container {
+  width: 100%;
+  //   background-color: #5f9dc2;
+  background-color: #00194c;
+  font-family: 'Pretendard', 'Arial', sans-serif;
+
+  #header {
+    display: flex;
+    padding: 20px 12px 32px 24px;
+
+    #logo {
+      display: flex;
+      flex-direction: column;
+      font-size: 30px;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+      font-weight: 900;
+      color: #f9f9f9;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      cursor: pointer;
+      #main {
+        font-size: 50px;
+        margin-bottom: 2px;
+      }
+    }
+  }
+
+  #banner {
+    display: flex;
+
+    #bannerImage {
+      width: 100%;
+      height: 500px;
+      background-image: url('../assets/img/banner-skyscraper.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  #contents {
+    background-color: #f9f9f9;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 120px;
+
+    #about,
+    #invest {
+      background-color: f9f9f9;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #about {
+      width: 100%;
+      margin-top: 60px;
+      font-size: 16px;
+      margin-bottom: 88px;
+      // letter-spacing: -5px;
+      // font-weight: 600;
+      #aboutTitle {
+        width: 100%;
+        margin-top: 60px;
+        font-size: 60px;
+        // letter-spacing: -5px;
+        font-weight: 600;
+        margin-bottom: 40px;
+      }
+      div {
+        // background-color: tomato;
+        display: flex;
+        justify-content: flex-start;
+        padding: 0 48px 0 48px;
+      }
+    }
+
+    #invest {
+      margin-bottom: 200px;
+      .investTitle {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 60px;
+        font-family: 'Helvetica';
+        font-size: 60px;
+        font-weight: 600;
+        span:first-child {
+          margin-bottom: 24px;
+        }
+      }
+      #investContents {
+        display: flex;
+        //retry
+        justify-content: space-evenly;
+        margin-top: 88px;
+
+        .aiContents,
+        .quantumContents,
+        .DeFIContents,
+        .web3Contents {
+          display: flex;
+          flex-direction: column;
+          color: #413c3c;
+          font-size: 16px;
+          font-weight: 600;
+          letter-spacing: 1px;
+          #aiImage {
+            width: 240px;
+            height: 280px;
+
+            background-image: url('../assets/img/rwa.svg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: solid 2px gray;
+            border-top-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+          }
+          #quantumImage {
+            width: 240px;
+            height: 280px;
+
+            background-image: url('../assets/img/rwa.svg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: solid 2px gray;
+            border-top-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+          }
+          #DeFImage {
+            width: 240px;
+            height: 280px;
+
+            background-image: url('../assets/img/rwa.svg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: solid 2px gray;
+            border-top-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+          }
+          #web3Image {
+            width: 240px;
+            height: 280px;
+
+            background-image: url('../assets/img/rwa.svg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: solid 2px gray;
+            border-top-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+          }
+          span {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 8px;
+          }
+        }
+      }
+    }
+  }
+
+  #footer {
+    background-color: #00194c;
+    color: #f9f9f9;
+    padding: 24px 24px;
+
+    #logo {
+      display: flex;
+      flex-direction: column;
+      font-weight: 100;
+      letter-spacing: 2px;
+      font-size: 10px;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+      text-transform: uppercase;
+
+      #main {
+        font-size: 40px;
+        font-weight: 900;
+      }
+    }
+
+    #footerContents {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      margin-top: 20px;
+
+      #footerGroup {
+        display: flex;
+        justify-content: space-evenly;
+        width: 50%;
+        font-size: 20px;
+        font-weight: 200;
+        letter-spacing: 1.5px;
+        span {
+          cursor: pointer;
+
+          &:hover {
+            color: gray;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #contents {
+    padding: 0 20px !important;
+  }
+
+  #invest {
+    .investTitle {
+      width: 100%;
+      margin-top: 60px;
+      font-size: 30px;
+      letter-spacing: -5px;
+      font-weight: 600;
+      span:first-child {
+        margin-bottom: 20px;
+      }
+    }
+    #investContents {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  #footerContents {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  #footerGroup {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+}
