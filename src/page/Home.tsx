@@ -1,6 +1,13 @@
 import styled from './Home.module.scss';
 import { kor, eng } from '../assets/language';
+import { useState } from 'react';
 const Home = () => {
+  const [isLanguage, setLanguage] = useState<string>('Eng');
+
+  const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setLanguage(e.target.value);
+  };
+
   return (
     <div className={styled.container}>
       <header id={styled.header}>
@@ -8,7 +15,19 @@ const Home = () => {
           <span id={styled.main}>NTI</span>
           <span>NEO TERRA INVEST</span>
         </div>
-        <div id={styled.menu}></div>
+        <div id={styled.menu}>
+          <button id={styled.language}>
+            <select
+              name="language"
+              id="language-select"
+              onChange={handleLanguageChange}
+              value={isLanguage}
+            >
+              <option value="eng">ENG</option>
+              <option value="kor">KOR</option>
+            </select>
+          </button>
+        </div>
       </header>
       <div id={styled.banner}>
         <div id={styled.bannerImage} />
@@ -16,7 +35,7 @@ const Home = () => {
       <div id={styled.contents}>
         <div id={styled.about}>
           <span id={styled.aboutTitle}>About Us</span>
-          <div>{kor}</div>
+          <div>{isLanguage === 'kor' ? kor.about : eng.about}</div>
         </div>
         <div id={styled.invest}>
           <div className={styled.investTitle}>
