@@ -22,4 +22,11 @@ Neo Terra goes beyond a simple geographical concept.
 It symbolizes a space of new opportunities and possibilities that break away from traditional boundaries and move toward the future. 
 In an ever-changing market, 
 we strive to achieve sustainable growth by constantly pursuing new investments and innovative ideas that push beyond limits.`,
+  start: `A space for new challenges and expansion, serving as a foundation for driving positive change in the world through innovation.`,
+  newInvest: `We move beyond traditional investment methods to focus on innovative and creative investments for the future.`,
+  newglobal: `We expand our global influence through strategic investments that prioritize technology, the environment, and sustainability.`,
+  adventure: `We lead emerging markets with agility and flexibility in rapidly changing industries.`,
+  create: `We embrace challenges without fear and continuously strive for value creation through thoughtful execution.`,
+  trust: `We pursue sustainable growth based on trust with our customers.`,
+  value: `We create a better future through responsible investments that consider society and the environment.`,
 };

@@ -1,12 +1,37 @@
 import styled from './Home.module.scss';
 import { kor, eng } from '../assets/language';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 const Home = () => {
   const [isLanguage, setLanguage] = useState<string>('Eng');
+  const [isActive, setActive] = useState<string>('');
+  const contentRef = useRef<HTMLDivElement>(null); // 컴포넌트 참조
 
   const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setLanguage(e.target.value);
   };
+
+  const hanldeActive = (type: string) => {
+    setActive(type);
+    console.log(type);
+  };
+
+  useEffect(() => {
+    setActive('');
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        contentRef.current &&
+        !contentRef.current.contains(e.target as Node)
+      ) {
+        setActive(' ');
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className={styled.container}>
@@ -40,18 +65,106 @@ const Home = () => {
             <div id={styled.aboutus}>
               <span>{isLanguage === 'kor' ? kor.about : eng.about}</span>
               <hr />
-              <div id={styled.details}>
-                <div>
-                  <span>Neo Terra, the Beginning of a New World</span>
+              <div id={styled.details} ref={contentRef}>
+                <div id={styled.content}>
+                  <div
+                    className={styled.title}
+                    onClick={() => {
+                      hanldeActive('start');
+                    }}
+                  >
+                    Neo Terra, the Beginning of a New World
+                  </div>
+                  {isActive === 'start' && (
+                    <div
+                      className={styled.description}
+                      onClick={() => {
+                        hanldeActive('');
+                      }}
+                    >
+                      {isLanguage === 'kor' ? kor.start : eng.start}
+                    </div>
+                  )}
                 </div>
-                <div>
-                  <span>New Investments, Sustainable Growth</span>
+                <div id={styled.content}>
+                  <div
+                    className={styled.title}
+                    onClick={() => {
+                      hanldeActive('newInvest');
+                    }}
+                  >
+                    New Investments, Sustainable Growth
+                  </div>
+                  {isActive === 'newInvest' && (
+                    <div
+                      className={styled.description}
+                      onClick={() => {
+                        hanldeActive('');
+                      }}
+                    >
+                      {isLanguage === 'kor' ? kor.newInvest : eng.newInvest}
+                    </div>
+                  )}
                 </div>
-                <div>
-                  <span>Leading the Way in Innovation and Challenge</span>
+                <div id={styled.content}>
+                  <div
+                    className={styled.title}
+                    onClick={() => {
+                      hanldeActive('newglobal');
+                    }}
+                  >
+                    Leading the Way in Innovation and Challenge
+                  </div>
+                  {isActive === 'newglobal' && (
+                    <>
+                      <div
+                        className={styled.description}
+                        onClick={() => {
+                          hanldeActive('');
+                        }}
+                      >
+                        {isLanguage === 'kor' ? kor.newglobal : eng.newglobal}
+                      </div>
+                      <div
+                        className={styled.description}
+                        onClick={() => {
+                          hanldeActive('');
+                        }}
+                      >
+                        {isLanguage === 'kor' ? kor.adventure : eng.adventure}
+                      </div>
+                    </>
+                  )}
                 </div>
-                <div>
-                  <span>NTI, Creating New Value</span>
+                <div id={styled.content}>
+                  <div
+                    className={styled.title}
+                    onClick={() => {
+                      hanldeActive('value');
+                    }}
+                  >
+                    NTI, Creating New Value
+                  </div>
+                  {isActive === 'value' && (
+                    <>
+                      <div
+                        className={styled.description}
+                        onClick={() => {
+                          hanldeActive('');
+                        }}
+                      >
+                        {isLanguage === 'kor' ? kor.trust : eng.trust}
+                      </div>
+                      <div
+                        className={styled.description}
+                        onClick={() => {
+                          hanldeActive('');
+                        }}
+                      >
+                        {isLanguage === 'kor' ? kor.value : eng.value}
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
               <hr />
@@ -106,7 +219,7 @@ const Home = () => {
             <span>investment in the Future</span>
           </div>
         </div>
-        <div>test</div>
+        <div></div>
       </footer>
     </div>
   );

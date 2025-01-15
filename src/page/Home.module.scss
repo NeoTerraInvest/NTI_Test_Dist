@@ -101,13 +101,22 @@
             font-size: 36px;
             font-weight: 600;
             padding: 60px 0px;
-            div {
+            #content {
               margin-bottom: 3%;
               color: #413c3c;
               cursor: pointer;
-            }
-            div:hover {
-              color: #0a265e;
+              .title {
+                display: flex;
+                margin-bottom: 10px;
+              }
+              .title:hover {
+                color: #0a265e;
+              }
+              .description {
+                font-size: 20px;
+                margin-top: 3%;
+                margin-left: 14px;
+              }
             }
           }
         }
@@ -294,6 +303,18 @@
 
   #contents {
     padding: 0 20px !important;
+  }
+
+  #details {
+    padding: 0 !important;
+    font-size: 24px !important;
+  }
+
+  #content {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center !important;
   }
 
   #invest {
